@@ -4,7 +4,7 @@ Tags: logo, carousel, marquee, ticker, block
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.0
-Stable tag: 0.1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,7 +56,7 @@ styling guide in the plugin's `docs/` folder.
 
 == Changelog ==
 
-= 0.1.0 =
+= 1.0.0 =
 * Initial release: Logo Carousel block with pure-CSS marquee, Media Library
   picker, and controls for speed, pause-on-hover, logo height, gap, greyscale
-  and repeat count.
+  and repeat count. Translations for en_GB, fr_FR, de_DE and es_ES.

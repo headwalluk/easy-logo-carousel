@@ -1,6 +1,6 @@
 # Easy Logo Carousel
 
-![Version](https://img.shields.io/badge/version-0.1.0-brightgreen.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
 ![WordPress](https://img.shields.io/badge/WordPress-6.5%2B-21759b.svg?logo=wordpress&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.0%2B-777bb4.svg?logo=php&logoColor=white)
 ![License](https://img.shields.io/badge/license-GPLv2%2B-blue.svg)

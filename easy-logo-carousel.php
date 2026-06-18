@@ -3,7 +3,7 @@
  * Plugin Name:       Easy Logo Carousel
  * Plugin URI:        https://headwall-hosting.com/
  * Description:       A lightweight Gutenberg block for an auto-scrolling, continuously looping marquee of logo images from the Media Library. Pure CSS, no frontend JavaScript library.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Paul Faulkner
@@ -19,7 +19,7 @@
 defined( 'ABSPATH' ) || die();
 
 const ELC_NAME    = 'easy-logo-carousel';
-const ELC_VERSION = '0.1.0';
+const ELC_VERSION = '1.0.0';
 
 define( 'ELC_FILE', __FILE__ );
 define( 'ELC_BASENAME', plugin_basename( __FILE__ ) );

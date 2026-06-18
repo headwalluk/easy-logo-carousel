@@ -1,6 +1,6 @@
 # Easy Logo Carousel - Project Tracker
 
-**Version:** 0.1.0 (pre-release)
+**Version:** 1.0.0
 **Last Updated:** 18 June 2026
 **Current Phase:** Milestone 1 (MVP block scaffold)
 **Overall Progress:** ~80% of MVP — block builds, activates, PHPCS clean; manual browser test pending
