@@ -1,0 +1,71 @@
+/**
+ * Shared front-end + editor styles for the marquee.
+ *
+ * The seamless loop works by rendering the logo set twice and animating the
+ * track by -50% (one full set width), so the end frame is pixel-identical to
+ * the start frame.
+ */
+.wp-block-easy-logo-carousel-marquee {
+	.elc-marquee {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.elc-track {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		gap: var(--elc-gap, 48px);
+		width: max-content;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		animation: elc-scroll var(--elc-duration, 30s) linear infinite;
+	}
+
+	&.is-paused-on-hover .elc-marquee:hover .elc-track {
+		animation-play-state: paused;
+	}
+
+	.elc-item {
+		flex: 0 0 auto;
+		margin: 0;
+	}
+
+	.elc-item img {
+		display: block;
+		width: auto;
+		max-width: none;
+		height: var(--elc-logo-height, 48px);
+	}
+
+	.elc-track.is-grayscale .elc-item img {
+		filter: grayscale(100%);
+		opacity: 0.75;
+		transition: filter 0.2s ease, opacity 0.2s ease;
+	}
+
+	.elc-track.is-grayscale .elc-item img:hover {
+		filter: grayscale(0);
+		opacity: 1;
+	}
+}
+
+@keyframes elc-scroll {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+/* Respect users who prefer reduced motion: show a static, wrapped row. */
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-easy-logo-carousel-marquee .elc-track {
+		flex-wrap: wrap;
+		justify-content: center;
+		animation: none;
+	}
+}

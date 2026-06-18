@@ -1,0 +1,18 @@
+{
+	"name": "easy-logo-carousel",
+	"version": "0.1.0",
+	"description": "A lightweight Gutenberg block for an auto-scrolling logo marquee.",
+	"author": "Paul Faulkner",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.0.0"
+	}
+}

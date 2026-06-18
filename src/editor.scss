@@ -1,0 +1,14 @@
+/**
+ * Editor-only styles.
+ *
+ * In the editor we show a static, horizontally-scrollable preview row rather
+ * than animating, so the editor can configure the block calmly.
+ */
+.wp-block-easy-logo-carousel-marquee .elc-marquee--preview {
+	overflow-x: auto;
+
+	.elc-track {
+		flex-wrap: nowrap;
+		animation: none !important;
+	}
+}

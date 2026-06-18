@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "easy-logo-carousel/marquee",
+  "version": "0.1.0",
+  "title": "Logo Carousel",
+  "category": "media",
+  "icon": "images-alt2",
+  "description": "An auto-scrolling, continuously looping marquee of logo images.",
+  "keywords": [
+    "logo",
+    "carousel",
+    "marquee",
+    "ticker",
+    "slider"
+  ],
+  "textdomain": "easy-logo-carousel",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "images": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "speed": {
+      "type": "number",
+      "default": 30
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true
+    },
+    "logoHeight": {
+      "type": "number",
+      "default": 48
+    },
+    "gap": {
+      "type": "number",
+      "default": 48
+    },
+    "grayscale": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
