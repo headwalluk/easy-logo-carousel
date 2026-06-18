@@ -1,7 +1,15 @@
 # Dependencies (build/ IS committed so the plugin runs without an npm step).
 /node_modules/
 
+# Release staging (created by the release workflow)
+/dist/
+
 # Logs and OS cruft
 *.log
 .DS_Store
 Thumbs.db
+
+# Editor backups / swap files
+*~
+*.swp
+*.swo
