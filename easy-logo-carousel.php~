@@ -21,21 +21,18 @@ defined( 'ABSPATH' ) || die();
 const ELC_NAME    = 'easy-logo-carousel';
 const ELC_VERSION = '0.1.0';
 
-define( 'ELC_FILE', __FILE__ );
-define( 'ELC_BASENAME', plugin_basename( __FILE__ ) );
 define( 'ELC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ELC_URL', plugin_dir_url( __FILE__ ) );
 
 // Load constants and plugin classes.
 require_once ELC_DIR . 'constants.php';
-require_once ELC_DIR . 'includes/class-github-updater.php';
 require_once ELC_DIR . 'includes/class-plugin.php';
 
 /**
  * Boot the plugin.
  */
-function elc_plugin_run() {
+function elc_run() {
 	$plugin = new Easy_Logo_Carousel\Plugin();
 	$plugin->run();
 }
-elc_plugin_run();
+elc_run();

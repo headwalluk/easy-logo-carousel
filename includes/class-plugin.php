@@ -15,10 +15,20 @@ defined( 'ABSPATH' ) || die();
 class Plugin {
 
 	/**
+	 * GitHub release updater.
+	 *
+	 * @var Github_Updater|null
+	 */
+	private ?Github_Updater $updater = null;
+
+	/**
 	 * Hook the plugin into WordPress.
 	 */
 	public function run(): void {
 		add_action( 'init', array( $this, 'register_block' ) );
+
+		// Serve plugin updates from the GitHub repository's releases.
+		$this->updater = new Github_Updater();
 	}
 
 	/**

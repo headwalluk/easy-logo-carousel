@@ -120,6 +120,39 @@ Media Library and renders a continuous CSS marquee on the frontend.
 
 ---
 
+### Milestone 1b: Release & Distribution Infrastructure ✅
+
+**Status:** Complete
+**Priority:** Medium
+**Completed:** 18 June 2026
+
+**Goal:** Project documentation and a self-serve release pipeline.
+
+- [x] `README.md` (GitHub) — lean, badges, summary, links to `docs/`.
+- [x] `readme.txt` (WordPress.org format).
+- [x] `CHANGELOG.md` (Keep a Changelog).
+- [x] `docs/usage.md`, `docs/styling.md`, `docs/developers.md`.
+- [x] `LICENSE` (GPLv2).
+- [x] Developer filters in `render.php`: `elc_logo_image_size`, `elc_marquee_html`.
+- [x] GitHub self-updater (`includes/class-github-updater.php`, adapted from
+      Quick 2FA) — serves updates from repo Releases; `elc_updater_enabled`
+      filter to disable on staging. Constants in `constants.php`
+      (`ELC_UPDATER_*`), `ELC_FILE`/`ELC_BASENAME` added to bootstrap.
+- [x] `.github/workflows/release.yml` — builds release zips on `v*.*.*` tags.
+      **Staging dir renamed `build/` → `dist/`** to avoid clobbering our
+      committed compiled `build/`.
+- [x] `.distignore` — ships compiled `build/`, excludes `src/`, `dist/`, dev
+      files. (build/ is required at runtime; there is no npm step on the
+      target site.)
+
+**Release process:** bump version in `easy-logo-carousel.php` + `ELC_VERSION` +
+`readme.txt` Stable tag + `CHANGELOG.md`, commit, then
+`git tag vX.Y.Z && git push --tags`. The workflow publishes
+`easy-logo-carousel.zip` (stable name) + a versioned zip; sites auto-update via
+the in-plugin updater.
+
+---
+
 ### Milestone 2: Polish & Options 📋
 
 **Status:** Not Started

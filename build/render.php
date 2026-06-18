@@ -36,13 +36,21 @@ $elc_repeat = isset( $attributes['repeat'] ) ? max( 1, (int) $attributes['repeat
 $elc_duration = max( 1, $elc_speed * $elc_repeat );
 
 /**
+ * Filters the registered image size used to render each logo.
+ *
+ * @param string $size       Image size slug. Default 'medium'.
+ * @param array  $attributes The block attributes.
+ */
+$elc_image_size = apply_filters( 'elc_logo_image_size', 'medium', $attributes );
+
+/**
  * Build the markup for one copy of the logo set.
  *
  * @param array $images Image records ( id, url, alt ).
  * @param bool  $hidden Whether this copy is the decorative duplicate.
  * @return string List-item markup.
  */
-$elc_render_items = static function ( array $images, bool $hidden ): string {
+$elc_render_items = static function ( array $images, bool $hidden ) use ( $elc_image_size ): string {
 	$html = '';
 
 	foreach ( $images as $image ) {
@@ -53,7 +61,7 @@ $elc_render_items = static function ( array $images, bool $hidden ): string {
 		if ( $image_id > 0 ) {
 			$img_html = wp_get_attachment_image(
 				$image_id,
-				'medium',
+				$elc_image_size,
 				false,
 				array(
 					'loading'  => 'lazy',
@@ -114,9 +122,17 @@ for ( $elc_copy = 0; $elc_copy < $elc_total_copies; $elc_copy++ ) {
 }
 
 // All component parts are individually escaped above.
-printf(
+$elc_html = sprintf(
 	'<div %1$s><div class="elc-marquee"><ul class="%2$s">%3$s</ul></div></div>',
-	$elc_wrapper_attributes, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_block_wrapper_attributes() returns escaped attributes.
+	$elc_wrapper_attributes,
 	esc_attr( $elc_track_class ),
-	$elc_track_html // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped wp_get_attachment_image() / esc_* output.
+	$elc_track_html
 );
+
+/**
+ * Filters the final marquee HTML before it is output.
+ *
+ * @param string $elc_html   The complete block markup.
+ * @param array  $attributes The block attributes.
+ */
+echo apply_filters( 'elc_marquee_html', $elc_html, $attributes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped get_block_wrapper_attributes() / wp_get_attachment_image() / esc_* output.
