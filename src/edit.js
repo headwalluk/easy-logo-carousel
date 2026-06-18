@@ -1,7 +1,7 @@
 /**
  * Editor UI for the Easy Logo Carousel marquee block.
  */
-import { __ } from '@wordpress/i18n';
+import { __, _x } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InspectorControls,
@@ -77,10 +77,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						}
 					/>
 					<RangeControl
-						label={ __(
-							'Logo height (px)',
-							'easy-logo-carousel'
-						) }
+						label={ __( 'Logo height (px)', 'easy-logo-carousel' ) }
 						value={ logoHeight }
 						onChange={ ( value ) =>
 							setAttributes( { logoHeight: value } )
@@ -101,10 +98,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						max={ 160 }
 					/>
 					<ToggleControl
-						label={ __(
-							'Greyscale logos',
-							'easy-logo-carousel'
-						) }
+						label={ __( 'Grayscale logos', 'easy-logo-carousel' ) }
 						checked={ grayscale }
 						onChange={ ( value ) =>
 							setAttributes( { grayscale: value } )
@@ -112,12 +106,17 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={ __( 'Advanced', 'easy-logo-carousel' ) }
+					title={ _x(
+						'Advanced',
+						'settings section',
+						'easy-logo-carousel'
+					) }
 					initialOpen={ false }
 				>
 					<RangeControl
-						label={ __(
+						label={ _x(
 							'Repeat logo set',
+							'control label',
 							'easy-logo-carousel'
 						) }
 						help={ __(
@@ -183,10 +182,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<MediaPlaceholder
 						icon="images-alt2"
 						labels={ {
-							title: __(
-								'Logo Carousel',
-								'easy-logo-carousel'
-							),
+							title: __( 'Logo Carousel', 'easy-logo-carousel' ),
 							instructions: __(
 								'Select logo images from your Media Library to scroll in the carousel.',
 								'easy-logo-carousel'

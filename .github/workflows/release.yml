@@ -1,75 +1,75 @@
 name: Build Release
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+    push:
+        tags:
+            - 'v*.*.*'
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Get version from tag
-        id: get_version
-        run: |
-          # Remove 'v' prefix from tag (v1.0.0 -> 1.0.0)
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
-          echo "Plugin version: ${VERSION}"
+            - name: Get version from tag
+              id: get_version
+              run: |
+                  # Remove 'v' prefix from tag (v1.0.0 -> 1.0.0)
+                  VERSION=${GITHUB_REF#refs/tags/v}
+                  echo "version=${VERSION}" >> $GITHUB_OUTPUT
+                  echo "Plugin version: ${VERSION}"
 
-      - name: Prepare plugin directory
-        # Stage into dist/ (not build/ — build/ holds the committed, shipped
-        # compiled block assets and must survive into the zip).
-        run: |
-          mkdir -p dist
-          rsync -av --exclude-from=.distignore ./ dist/easy-logo-carousel/
+            - name: Prepare plugin directory
+              # Stage into dist/ (not build/ — build/ holds the committed, shipped
+              # compiled block assets and must survive into the zip).
+              run: |
+                  mkdir -p dist
+                  rsync -av --exclude-from=.distignore ./ dist/easy-logo-carousel/
 
-      - name: Build release zips
-        # Build the versioned zip once, then copy it to the generic
-        # filename so both artifacts are guaranteed byte-identical
-        # (same SHA256, just different filenames).
-        run: |
-          cd dist
-          zip -r easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip easy-logo-carousel/
-          cp easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip easy-logo-carousel.zip
-          cd ..
+            - name: Build release zips
+              # Build the versioned zip once, then copy it to the generic
+              # filename so both artifacts are guaranteed byte-identical
+              # (same SHA256, just different filenames).
+              run: |
+                  cd dist
+                  zip -r easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip easy-logo-carousel/
+                  cp easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip easy-logo-carousel.zip
+                  cd ..
 
-      - name: Upload versioned zip as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: easy-logo-carousel-${{ steps.get_version.outputs.version }}
-          path: dist/easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip
+            - name: Upload versioned zip as artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: easy-logo-carousel-${{ steps.get_version.outputs.version }}
+                  path: dist/easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip
 
-      - name: Upload generic zip as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: easy-logo-carousel
-          path: dist/easy-logo-carousel.zip
+            - name: Upload generic zip as artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: easy-logo-carousel
+                  path: dist/easy-logo-carousel.zip
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            dist/easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip
-            dist/easy-logo-carousel.zip
-          body: |
-            **Easy Logo Carousel v${{ steps.get_version.outputs.version }}**
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: |
+                      dist/easy-logo-carousel-${{ steps.get_version.outputs.version }}.zip
+                      dist/easy-logo-carousel.zip
+                  body: |
+                      **Easy Logo Carousel v${{ steps.get_version.outputs.version }}**
 
-            A lightweight Gutenberg block for an auto-scrolling, pure-CSS logo marquee.
+                      A lightweight Gutenberg block for an auto-scrolling, pure-CSS logo marquee.
 
-            Download `easy-logo-carousel.zip` and install via WordPress admin (Plugins → Add New → Upload Plugin), or upload to your `wp-content/plugins/` directory.
+                      Download `easy-logo-carousel.zip` and install via WordPress admin (Plugins → Add New → Upload Plugin), or upload to your `wp-content/plugins/` directory.
 
-            Sites running a previous version will receive this update automatically via the in-plugin GitHub updater.
+                      Sites running a previous version will receive this update automatically via the in-plugin GitHub updater.
 
-            See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for full release notes.
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                      See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for full release notes.
+                  draft: false
+                  prerelease: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -113,8 +113,11 @@ Media Library and renders a continuous CSS marquee on the frontend.
 **Phase 5: Quality & i18n**
 - [x] `phpcs` clean (4/4, exit 0)
 - [x] Plugin activates cleanly (`wp plugin activate easy-logo-carousel`)
-- [ ] Strings stay wrapped in i18n functions; `.pot` generation deferred to
-      Paul's dedicated translation tool (do NOT run `wp i18n make-pot`)
+- [x] Strings wrapped in i18n functions; `_x()` context added to "Advanced"
+      and "Repeat logo set". Translated with `wp-translate` (DeepL) for
+      en_GB, fr_FR, de_DE, es_ES — `.po`/`.mo`/`.pot` in `languages/`.
+      NOTE: the British-spelling converter doesn't handle grayscale→greyscale,
+      so en_GB shows "Grayscale"; hand-edit the `.po` if "Greyscale" is wanted.
 - [ ] Manual test on https://devx.headwall.tech (add block, pick logos, verify
       seamless loop + hover pause + reduced-motion + grayscale)
 

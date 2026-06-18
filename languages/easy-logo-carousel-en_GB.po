@@ -1,0 +1,146 @@
+# Copyright (C) 2026 Paul Faulkner
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Language: en_GB\n"
+"Project-Id-Version: Easy Logo Carousel 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-logo-carousel\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-18T19:55:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: easy-logo-carousel\n"
+
+#. Plugin Name of the plugin
+#: easy-logo-carousel.php
+msgid "Easy Logo Carousel"
+msgstr "Easy Logo Carousel"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: easy-logo-carousel.php
+msgid "https://headwall-hosting.com/"
+msgstr "https://headwall-hosting.com/"
+
+#. Description of the plugin
+#: easy-logo-carousel.php
+msgid "A lightweight Gutenberg block for an auto-scrolling, continuously looping marquee of logo images from the Media Library. Pure CSS, no frontend JavaScript library."
+msgstr "A lightweight Gutenberg block for an auto-scrolling, continuously looping marquee of logo images from the Media Library. Pure CSS, no frontend JavaScript library."
+
+#. Author of the plugin
+#: easy-logo-carousel.php
+msgid "Paul Faulkner"
+msgstr "Paul Faulkner"
+
+#: build/index.js:1
+#: src/edit.js:54
+msgid "Carousel settings"
+msgstr "Carousel settings"
+
+#: build/index.js:1
+#: src/edit.js:57
+msgid "Scroll speed (seconds per logo set)"
+msgstr "Scroll speed (seconds per logo set)"
+
+#: build/index.js:1
+#: src/edit.js:61
+msgid "Lower is faster. This stays consistent however many times the set repeats."
+msgstr "Lower is faster. This stays consistent however many times the set repeats."
+
+#: build/index.js:1
+#: src/edit.js:73
+msgid "Pause on hover"
+msgstr "Pause on hover"
+
+#: build/index.js:1
+#: src/edit.js:80
+msgid "Logo height (px)"
+msgstr "Logo height (px)"
+
+#: build/index.js:1
+#: src/edit.js:89
+msgid "Gap between logos (px)"
+msgstr "Gap between logos (px)"
+
+#: build/index.js:1
+#: src/edit.js:101
+msgid "Grayscale logos"
+msgstr "Grayscale logos"
+
+#: build/index.js:1
+#: src/edit.js:109
+msgctxt "settings section"
+msgid "Advanced"
+msgstr "Advanced"
+
+#: build/index.js:1
+#: src/edit.js:117
+msgctxt "control label"
+msgid "Repeat logo set"
+msgstr "Repeat logo set"
+
+#: build/index.js:1
+#: src/edit.js:122
+msgid "How many copies of the logos fill the strip. Increase this if you see a gap before the loop repeats (e.g. with few or small logos on a wide screen)."
+msgstr "How many copies of the logos fill the strip. Increase this if you see a gap before the loop repeats (e.g. with few or small logos on a wide screen)."
+
+#: build/index.js:1
+#: src/edit.js:148
+msgid "Edit images"
+msgstr "Edit images"
+
+#: build/index.js:1
+#: src/edit.js:185
+msgid "Logo Carousel"
+msgstr "Logo Carousel"
+
+#: build/index.js:1
+#: src/edit.js:186
+msgid "Select logo images from your Media Library to scroll in the carousel."
+msgstr "Select logo images from your Media Library to scroll in the carousel."
+
+#: build/block.json
+#: src/block.json
+msgctxt "block title"
+msgid "Logo Carousel"
+msgstr "Logo Carousel"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block description"
+msgid "An auto-scrolling, continuously looping marquee of logo images."
+msgstr "An auto-scrolling, continuously looping marquee of logo images."
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "logo"
+msgstr "logo"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "carousel"
+msgstr "carousel"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "marquee"
+msgstr "marquee"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "ticker"
+msgstr "ticker"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr "slider"

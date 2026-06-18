@@ -1,0 +1,146 @@
+# Copyright (C) 2026 Paul Faulkner
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Language: fr_FR\n"
+"Project-Id-Version: Easy Logo Carousel 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-logo-carousel\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-18T19:55:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: easy-logo-carousel\n"
+
+#. Plugin Name of the plugin
+#: easy-logo-carousel.php
+msgid "Easy Logo Carousel"
+msgstr "Carrousel de logos simple"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: easy-logo-carousel.php
+msgid "https://headwall-hosting.com/"
+msgstr "https://headwall-hosting.com/"
+
+#. Description of the plugin
+#: easy-logo-carousel.php
+msgid "A lightweight Gutenberg block for an auto-scrolling, continuously looping marquee of logo images from the Media Library. Pure CSS, no frontend JavaScript library."
+msgstr "Un bloc Gutenberg léger permettant d'afficher un défilement automatique en boucle continue d'images de logos issues de la médiathèque. Entièrement en CSS, sans bibliothèque JavaScript côté client."
+
+#. Author of the plugin
+#: easy-logo-carousel.php
+msgid "Paul Faulkner"
+msgstr "Paul Faulkner"
+
+#: build/index.js:1
+#: src/edit.js:54
+msgid "Carousel settings"
+msgstr "Paramètres du carrousel"
+
+#: build/index.js:1
+#: src/edit.js:57
+msgid "Scroll speed (seconds per logo set)"
+msgstr "Vitesse de défilement (en secondes par série de logos)"
+
+#: build/index.js:1
+#: src/edit.js:61
+msgid "Lower is faster. This stays consistent however many times the set repeats."
+msgstr "Plus la vitesse est faible, plus c'est rapide. Cela reste vrai quel que soit le nombre de répétitions de la série."
+
+#: build/index.js:1
+#: src/edit.js:73
+msgid "Pause on hover"
+msgstr "Mise en pause au survol"
+
+#: build/index.js:1
+#: src/edit.js:80
+msgid "Logo height (px)"
+msgstr "Hauteur du logo (px)"
+
+#: build/index.js:1
+#: src/edit.js:89
+msgid "Gap between logos (px)"
+msgstr "Espacement entre les logos (px)"
+
+#: build/index.js:1
+#: src/edit.js:101
+msgid "Grayscale logos"
+msgstr "Logos en niveaux de gris"
+
+#: build/index.js:1
+#: src/edit.js:109
+msgctxt "settings section"
+msgid "Advanced"
+msgstr "Avancé"
+
+#: build/index.js:1
+#: src/edit.js:117
+msgctxt "control label"
+msgid "Repeat logo set"
+msgstr "Ensemble de logos à répéter"
+
+#: build/index.js:1
+#: src/edit.js:122
+msgid "How many copies of the logos fill the strip. Increase this if you see a gap before the loop repeats (e.g. with few or small logos on a wide screen)."
+msgstr "Combien d'exemplaires des logos remplissent la bande. Augmentez cette valeur si vous constatez un espace vide avant que la boucle ne recommence (par exemple, lorsqu'il y a peu de logos ou que ceux-ci sont petits sur un écran large)."
+
+#: build/index.js:1
+#: src/edit.js:148
+msgid "Edit images"
+msgstr "Modifier des images"
+
+#: build/index.js:1
+#: src/edit.js:185
+msgid "Logo Carousel"
+msgstr "Carrousel de logos"
+
+#: build/index.js:1
+#: src/edit.js:186
+msgid "Select logo images from your Media Library to scroll in the carousel."
+msgstr "Sélectionnez des images de logo dans votre bibliothèque multimédia pour les faire défiler dans le carrousel."
+
+#: build/block.json
+#: src/block.json
+msgctxt "block title"
+msgid "Logo Carousel"
+msgstr "Carrousel de logos"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block description"
+msgid "An auto-scrolling, continuously looping marquee of logo images."
+msgstr "Un défilement automatique et en boucle continue d'images de logos."
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "logo"
+msgstr "logo"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "carousel"
+msgstr "carrousel"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "marquee"
+msgstr "marquee"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "ticker"
+msgstr "ticker"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr "curseur"

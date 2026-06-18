@@ -25,5 +25,6 @@ Initial release.
 - GitHub self-updater: serves plugin updates from the repository's Releases
   (toggleable via the `elc_updater_enabled` filter), plus a tag-triggered
   GitHub Actions workflow that builds and publishes the release zips.
+- Translations for en_GB, fr_FR, de_DE and es_ES (generated with wp-translate).
 
 [0.1.0]: https://github.com/headwalluk/easy-logo-carousel/releases/tag/v0.1.0
