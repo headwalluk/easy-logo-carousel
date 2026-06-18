@@ -51,9 +51,11 @@ clean, self-contained, reusable block.
 - [ ] Manual browser test on https://devx.headwall.tech (seamless loop, hover
       pause, reduced-motion, grayscale)
 - [ ] Re-enable `isp-tick.sh` security cron at end of dev session
-- [ ] Known limitation: seamless loop assumes the logo set fills the viewport
-      width. With very few logos a gap can appear. Acceptable for MVP; a
-      robustness fix (auto-repeat the set) is parked for Milestone 2.
+- [x] ~~Known limitation: seamless loop assumes the logo set fills the
+      viewport.~~ RESOLVED: added an Advanced "Repeat logo set" control
+      (1–8, default 2, pure CSS). Render builds two halves of `repeat` sets and
+      animates -50%; `speed` is now seconds-per-set so the velocity stays
+      constant as `repeat` changes. Only the first set is exposed to AT.
 
 ## Dev Process Notes
 

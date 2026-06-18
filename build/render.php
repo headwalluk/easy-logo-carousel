@@ -26,6 +26,15 @@ $elc_gap            = isset( $attributes['gap'] ) ? (int) $attributes['gap'] : 4
 $elc_pause_on_hover = ! empty( $attributes['pauseOnHover'] );
 $elc_grayscale      = ! empty( $attributes['grayscale'] );
 
+// How many times the set is repeated per half of the track. Higher values fill
+// wider viewports so the loop never shows a gap. Minimum of 1.
+$elc_repeat = isset( $attributes['repeat'] ) ? max( 1, (int) $attributes['repeat'] ) : 2;
+
+// The animation scrolls one half of the track (= $elc_repeat sets) in this many
+// seconds. Scaling by the repeat count keeps the visual speed-per-set constant
+// regardless of how many copies we render.
+$elc_duration = max( 1, $elc_speed * $elc_repeat );
+
 /**
  * Build the markup for one copy of the logo set.
  *
@@ -86,7 +95,7 @@ $elc_wrapper_attributes = get_block_wrapper_attributes(
 		'class' => implode( ' ', $elc_wrapper_classes ),
 		'style' => sprintf(
 			'--elc-duration:%1$ds;--elc-gap:%2$dpx;--elc-logo-height:%3$dpx;',
-			$elc_speed,
+			$elc_duration,
 			$elc_gap,
 			$elc_logo_height
 		),
@@ -95,8 +104,14 @@ $elc_wrapper_attributes = get_block_wrapper_attributes(
 
 $elc_track_class = 'elc-track' . ( $elc_grayscale ? ' is-grayscale' : '' );
 
-// Two identical copies of the set give a seamless -50% loop.
-$elc_track_html = $elc_render_items( $elc_images, false ) . $elc_render_items( $elc_images, true );
+// Build the track as two identical halves (each $elc_repeat sets) so the -50%
+// animation loops seamlessly. Only the first set is exposed to assistive tech;
+// every subsequent copy is decorative.
+$elc_total_copies = $elc_repeat * 2;
+$elc_track_html   = '';
+for ( $elc_copy = 0; $elc_copy < $elc_total_copies; $elc_copy++ ) {
+	$elc_track_html .= $elc_render_items( $elc_images, $elc_copy > 0 );
+}
 
 // All component parts are individually escaped above.
 printf(

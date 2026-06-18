@@ -26,6 +26,10 @@
 			"type": "number",
 			"default": 30
 		},
+		"repeat": {
+			"type": "number",
+			"default": 2
+		},
 		"pauseOnHover": {
 			"type": "boolean",
 			"default": true

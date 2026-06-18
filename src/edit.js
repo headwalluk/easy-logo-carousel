@@ -34,7 +34,7 @@ const toImages = ( media ) =>
 	} ) );
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { images, speed, pauseOnHover, logoHeight, gap, grayscale } =
+	const { images, speed, repeat, pauseOnHover, logoHeight, gap, grayscale } =
 		attributes;
 	const blockProps = useBlockProps();
 	const hasImages = Array.isArray( images ) && images.length > 0;
@@ -55,7 +55,11 @@ export default function Edit( { attributes, setAttributes } ) {
 				>
 					<RangeControl
 						label={ __(
-							'Scroll duration (seconds per loop)',
+							'Scroll speed (seconds per logo set)',
+							'easy-logo-carousel'
+						) }
+						help={ __(
+							'Lower is faster. This stays consistent however many times the set repeats.',
 							'easy-logo-carousel'
 						) }
 						value={ speed }
@@ -105,6 +109,27 @@ export default function Edit( { attributes, setAttributes } ) {
 						onChange={ ( value ) =>
 							setAttributes( { grayscale: value } )
 						}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Advanced', 'easy-logo-carousel' ) }
+					initialOpen={ false }
+				>
+					<RangeControl
+						label={ __(
+							'Repeat logo set',
+							'easy-logo-carousel'
+						) }
+						help={ __(
+							'How many copies of the logos fill the strip. Increase this if you see a gap before the loop repeats (e.g. with few or small logos on a wide screen).',
+							'easy-logo-carousel'
+						) }
+						value={ repeat }
+						onChange={ ( value ) =>
+							setAttributes( { repeat: value } )
+						}
+						min={ 1 }
+						max={ 8 }
 					/>
 				</PanelBody>
 			</InspectorControls>
